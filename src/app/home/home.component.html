@@ -1,0 +1,291 @@
+<div *ngIf="retData == null">
+<h3>Local forecast is not available right now. Please choose an above option to begin viewing weather</h3>
+</div>
+<div *ngIf="retData != null">
+    <h3>Local 5 Day Forecast</h3>
+    <table style="width:100%">
+        <tr>
+            <td style="width:12%">
+                <h4>
+                    Forecast for <br>
+                    {{titleWord}}
+                </h4>
+                <table>    
+                    <tr>
+                        <th>Forecast</th>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <th>Temperature</th>
+                    </tr>
+                    <tr>
+                        <th>Pressure</th>
+                    </tr>
+                    <tr>
+                        <th>Humidity</th>
+                    </tr>
+                    <tr>
+                        <th>Wind Speed</th>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[0] != null" style="width:11%">
+                <b>00:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[0].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[0].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[0].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[0].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[0].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[0].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[0].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[0] == null">
+                <h4>00:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[1] != null" style="width:11%">
+                <b>03:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[1].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[1].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[1].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[1].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[1].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[1].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[1].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[1] == null">
+                <h4>03:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[2] != null" style="width:11%">
+                <b>06:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[2].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[2].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[2].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[2].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[2].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[2].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[2].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[2] == null">
+                <h4>06:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[3] != null" style="width:11%">
+                <b>09:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[3].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[3].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[3].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[3].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[3].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[3].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[3].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[3] == null">
+                <h4>09:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[4] != null" style="width:11%">
+                <b>12:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[4].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[4].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[4].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[4].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[4].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[4].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[4].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[4] == null">
+                <h4>12:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[5] != null" style="width:11%">
+                <b>15:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[5].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[5].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[5].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[5].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[5].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[5].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[5].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[5] == null">
+                <h4>15:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[6] != null" style="width:11%">
+                <b>18:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[6].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[6].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[6].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[6].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[6].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[6].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[6].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[6] == null">
+                <h4>18:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+
+            <td *ngIf="subdata[7] != null" style="width:11%">
+                <b>21:00:00</b>
+                <div [ngStyle]="{'background-image': 'url(http://openweathermap.org/img/w/' + subdata[7].weather[0].icon + '.png)', 'background-repeat': 'no-repeat' } " style="height:50px; width:80px"></div>
+                <table>
+                    <tr>
+                        <td>{{subdata[7].weather[0].main}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[7].weather[0].description}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[7].main.temp}} Kelvin</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[7].main.pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[7].main.humidity}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{subdata[7].wind.speed}}meters/sec</td>
+                    </tr>
+                </table>
+            </td>
+            <td *ngIf="subdata[7] == null">
+                <h4>21:00:00</h4>
+                <div style="height:180px; width:70px;">
+                    No data to display at this time
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <div style="width:100%">
+        <input type="button" [value]="determineWord(0)" style="width:20%" (click)="getSubData(0)">
+        <input type="button" [value]="determineWord(1)" style="width:20%" (click)="getSubData(1)" >
+        <input type="button" [value]="determineWord(2)" style="width:20%" (click)="getSubData(2)" >
+        <input type="button" [value]="determineWord(3)" style="width:20%" (click)="getSubData(3)" >
+        <input type="button" [value]="determineWord(4)" style="width:20%" (click)="getSubData(4)" >
+    </div>
+</div>
